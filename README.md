@@ -1,4 +1,4 @@
-# SEMANTIC-ORB_SLAM
+# SEMANTIC_ORB_SLAM
 
 Repository for my undergraduate project for FAPESP.
 
