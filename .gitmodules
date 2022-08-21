@@ -1,0 +1,9 @@
+[submodule "ORB_SLAM2"]
+	path = ORB_SLAM2
+	url = https://github.com/Gabriel-SGama/ORB_SLAM2.git
+[submodule "SORB_SLAM2"]
+	path = SORB_SLAM2
+	url = https://github.com/Gabriel-SGama/SORB_SLAM2.git
+[submodule "ORB_SLAM2_SuperPoint"]
+	path = ORB_SLAM2_SuperPoint
+	url = https://github.com/Gabriel-SGama/ORB_SLAM2_SuperPoint.git
