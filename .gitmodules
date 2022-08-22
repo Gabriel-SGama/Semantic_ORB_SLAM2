@@ -7,3 +7,7 @@
 [submodule "ORB_SLAM2_SuperPoint"]
 	path = ORB_SLAM2_SuperPoint
 	url = https://github.com/Gabriel-SGama/ORB_SLAM2_SuperPoint.git
+[submodule "ORB_SLAM2_NOVIS"]
+	path = ORB_SLAM2_NOVIS
+	url = https://github.com/Gabriel-SGama/ORB_SLAM2.git
+	branch = noVis
