@@ -7,13 +7,13 @@ from glob import glob
 import numpy as np
 
 PATH_TO_SEQ = "/home/gama/Documentos/datasets/kitti/data_odometry_color/dataset/sequences/"
-exec_path = "SSP_ORB_SLAM2/Examples/Monocular/mono_kitti"
-vocab_path = "SSP_ORB_SLAM2/Vocabulary/superpoint_voc.yml.gz"
-yaml_path = "SSP_ORB_SLAM2/Examples/Monocular/KITTI"
+exec_path = "ORB_SLAM2_SuperPoint/Examples/Monocular/mono_kitti"
+vocab_path = "ORB_SLAM2_SuperPoint/Vocabulary/superpoint_voc.yml.gz"
+yaml_path = "ORB_SLAM2_SuperPoint/Examples/Monocular/KITTI"
 yaml_options = ["00-02", "03", "04-12"]
 results_path = "results_test/"
 
-root_dir = "SSP_ORB_SLAM2/"
+root_dir = "ORB_SLAM2_SuperPoint/"
 
 
 def make_command(seq, model):
