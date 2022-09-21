@@ -35,7 +35,6 @@ At the moment the scripts only work for the KITTI dataset.
 python3 extract_pred_SSP.py # or python3 extract_pred_ORB.py
 python3 eval_pred.py
 python3 compare_pred.py
-
 ```
 
 ## Citations
