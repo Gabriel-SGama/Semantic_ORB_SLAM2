@@ -37,19 +37,23 @@ def make_command(seq, root_dir):
 
 
 if __name__ == "__main__":
+    """
+    seqs_to_eval: select the sequences to run the ORB_SLAM2_SuperPoint
+    descriptor: name of the descriptor method to use
+    nruns: number of times each sequence is going to executed
+    add_runs: whether to number the file from the (last run index + 1) or from 0
+    descriptor:
+    """
 
-    # seqs_to_eval = ["00", "01", "02", "03", "04", "05"]
     # seqs_to_eval = ["00"]
-    # seqs_to_eval = ["00", "01", "02", "03", "04", "05"]
-    # seqs_to_eval = ["00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10"]
-    seqs_to_eval = ["01"]
+    seqs_to_eval = ["00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10"]
 
-    nruns = 1
+    descriptor = ["ORB", "SEM"]
+
+    nruns = 10
     add_runs = True
 
     os.makedirs(results_path, exist_ok=True)
-
-    descriptor = ["ORB", "SEM"]
 
     for seq in seqs_to_eval:
         for desc in descriptor:

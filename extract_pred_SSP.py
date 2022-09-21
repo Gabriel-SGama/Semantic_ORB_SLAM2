@@ -11,7 +11,7 @@ exec_path = "ORB_SLAM2_SuperPoint/Examples/Monocular/mono_kitti"
 vocab_path = "ORB_SLAM2_SuperPoint/Vocabulary/superpoint_voc.yml.gz"
 yaml_path = "ORB_SLAM2_SuperPoint/Examples/Monocular/KITTI"
 yaml_options = ["00-02", "03", "04-12"]
-results_path = "results_test/"
+results_path = "results/"
 
 root_dir = "ORB_SLAM2_SuperPoint/"
 
@@ -43,19 +43,21 @@ def make_command(seq, model):
 
 
 if __name__ == "__main__":
+    """
+    seqs_to_eval: select the sequences to run the ORB_SLAM2_SuperPoint
+    models_to_eval: name of the model file extract using torch.jit.script
+    nruns: number of times each sequence is going to executed
+    add_runs: whether to number the file from the (last run index + 1) or from 0
+    """
 
-    # seqs_to_eval = ["00", "01", "02", "03", "04", "05"]
     # seqs_to_eval = ["00"]
-    # seqs_to_eval = ["00", "01", "02", "03", "04", "05"]
-    # seqs_to_eval = ["00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10"]
-    seqs_to_eval = ["01"]
+    seqs_to_eval = ["00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10"]
 
-    # models_to_eval = ["traced_model_normal_train_150000.pt", "traced_model_ssmall_ML2_180000.pt"]
-    models_to_eval = ["traced_model_normal_train_150000.pt"]
+    models_to_eval = ["traced_model_normal_train_150000.pt", "traced_model_ssmall_ML2_180000.pt"]
+    # models_to_eval = ["traced_model_normal_train_150000.pt"]
     # models_to_eval = ["traced_model_ssmall_ML2_180000.pt"]
-    # models_to_eval = ["traced_model_pretrained.pt"]
 
-    nruns = 1
+    nruns = 10
     add_runs = True
 
     os.makedirs(results_path, exist_ok=True)
