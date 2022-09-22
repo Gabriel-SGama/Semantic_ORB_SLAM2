@@ -41,7 +41,7 @@ python3 compare_pred.py
 
 ## Obtained results (without SORB):
 
-P-values are between Sp and SSp (ORB is only for reference porpuses)
+Mean APE obtained from 10 runs in each sequence. P-values are between Sp and SSp (ORB is only for reference porpuses)
 
 | Sequence | ORB     | Sp        | SSp (**ours**) | p-value |
 | -------- | ------- | --------- | -------------- | ------- |
