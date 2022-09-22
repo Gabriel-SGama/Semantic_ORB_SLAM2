@@ -30,12 +30,36 @@ At the moment the scripts only work for the KITTI dataset.
 - ```eval_pred.py```: Evaluates all trajectories in the *results* folder according to the APE and RPE metric using the [evo lib](https://github.com/MichaelGrupp/evo). The results are saved in a .csv file.
 - ```compare_pred.py```: From the .csv file from each sequence calculates the mean APE or RPE and prints a LaTeX table and plots a box plot. To get the p-values, add two models to the *models_to_compare* list.
 
+In the results_10 are the results obtained for my report. To generate another folder and evaluate the results (change the parameters in code to fit your needs):
+
 ```
 ./build_all.sh
 python3 extract_pred_SSP.py # or python3 extract_pred_ORB.py
 python3 eval_pred.py
 python3 compare_pred.py
 ```
+
+## Obtained results (without SORB):
+
+P-values are between Sp and SSp (ORB is only for reference porpuses)
+
+| Sequence | ORB     | Sp        | SSp (**ours**) | p-value |
+| -------- | ------- | --------- | -------------- | ------- |
+| 00       | 5.539   | 6.767     | **6.651**      | 0.705   |
+| 01       | 439.985 | 286.709   | **209.985**    | 0.131   |
+| 02       | 16.739  | 22.459    | **22.314**     | 0.821   |
+| 03       | 1.006   | **1.319** | 1.630          | 0.003   |
+| 04       | 1.177   | **0.840** | 0.905          | 0.940   |
+| 05       | 4.361   | **5.803** | 6.315          | 0.821   |
+| 06       | 13.327  | 11.953    | **11.833**     | 0.406   |
+| 07       | 2.281   | 3.388     | **2.124**      | 1.000   |
+| 08       | 37.679  | 31.324    | **26.700**     | 0.000   |
+| 09       | 20.527  | 35.945    | **31.788**     | 0.001   |
+| 10       | 5.071   | 5.515     | **4.953**      | 0.023   |
+
+![SSp](imgs/box_plot_KITTI.png?raw=true "box plot KITTI")
+
+
 
 ## Citations
 This repository was a byproduct of the paper: Semantic SuperPoint: A Deep Semantic Descriptor [ADD_LINK]. If this was repository was useful to you, please cite:
