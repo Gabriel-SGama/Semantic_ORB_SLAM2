@@ -19,7 +19,7 @@ if __name__ == "__main__":
     folders = []
 
     models_to_compare = []
-    models_to_compare = ["SP_185000_ML22", "SSP_small_180000_ML22"]
+    # models_to_compare = ["SP_185000_ML22", "SSP_small_180000_ML22"]
 
     # get folders
     print("eval results in directorys:")
@@ -68,7 +68,7 @@ if __name__ == "__main__":
         seq = folder.split("/")[-2]
 
         seq_data_dict[seq]["labels"].append(model)
-        data = pd.read_csv(folder + "/data_ape.csv")
+        data = pd.read_csv(folder + "/data_rpe.csv")
         for key in keys:
             if key == "labels":
                 continue
@@ -87,7 +87,11 @@ if __name__ == "__main__":
 
         for model_metric, name in zip(metrics["mean"], metrics["labels"]):
             mean = sum(model_metric) / len(model_metric)
-            data[name][seq] = mean
+            std = np.std(model_metric)
+            # data[name][seq] = mean
+            data[name][seq] = dict.fromkeys(["mean", "std"])
+            data[name][seq]["mean"] = mean
+            data[name][seq]["std"] = std
 
             if name in models_to_compare:
                 kruskal_data[name] = model_metric
@@ -99,9 +103,6 @@ if __name__ == "__main__":
     if len(models_to_compare) == 2:
         for seq in seq_list:
             pvalues.append(kruskal_res[seq].pvalue)
-
-    if len(models_to_compare) == 2:
-        print("kruskal_red: ", kruskal_res)
 
     df = pd.DataFrame(data)
 
