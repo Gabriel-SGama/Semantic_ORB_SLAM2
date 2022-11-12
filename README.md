@@ -62,7 +62,7 @@ Mean APE obtained from 10 runs in each sequence. P-values are between Sp and SSp
 
 
 ## Citations
-This repository was a byproduct of the paper: Semantic SuperPoint: A Deep Semantic Descriptor [ADD_LINK]. If this was repository was useful to you, please cite:
+This repository was a byproduct of the paper: [Semantic SuperPoint: A Deep Semantic Descriptor](https://arxiv.org/abs/2211.01098). If this was repository was useful to you, please cite:
 
 ```
 Not published yet
